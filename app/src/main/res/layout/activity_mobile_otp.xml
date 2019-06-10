@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.aman.androidfoodie.MobileOtpActivity">
+
+
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+
+            android:layout_marginTop="100sp"
+
+            android:id="@+id/edit_mobile"
+            app:layout_widthPercent="100%"
+            app:layout_marginLeftPercent="2%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="10%"
+
+
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+                <EditText
+                    android:id="@+id/edit_mobile_login_module"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+
+                    android:layout_marginRight="10dp"
+
+                    android:hint="Enter Mobile Number"
+
+
+
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:textColor="#57bfff"
+
+
+                    android:textColorHint="@android:color/white" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mobilepng"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@android:drawable/ic_menu_call"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+
+            android:layout_height="wrap_content"
+
+            android:text="Get Otp"
+            android:layout_below="@+id/edit_mobile"
+            app:layout_widthPercent="80%"
+            android:onClick="sendsms"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="10%"
+
+            app:layout_marginTopPercent="2%"
+            android:id="@+id/btn_otp_login_module"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:textColor="#ffff"/>
+
+
+        <LinearLayout
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            app:layout_widthPercent="100%"
+            android:id="@+id/otp_layout"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="30%"
+
+            android:layout_below="@id/btn_otp_login_module"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/colorAccent"
+
+                android:id="@+id/edit_text1_otp_login_module"
+
+                android:maxLength="1"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/edit_text2_otp_login_module"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/edit_text3_otp_login_module"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/edit_text4_otp_login_module"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="1"
+
+                android:id="@+id/edit_text5_otp_login_module"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/edit_text6_otp_login_module"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/countdown_login_module"
+            android:layout_below="@+id/otp_layout"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="100%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="30%"
+            android:gravity="center"
+            android:layout_marginTop="50sp"
+            android:clickable="false"
+            android:text="00:00"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend Otp?"
+            app:layout_widthPercent="80%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="30%"
+            android:layout_below="@id/countdown_login_module"
+            android:gravity="center"
+            android:textColor="#ffff"
+            android:id="@+id/btn_reotp_login_module"
+
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wrong Number?"
+
+            app:layout_widthPercent="100%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="30%"
+            android:layout_below="@id/btn_reotp_login_module"
+            android:textColor="#ffff"
+            android:gravity="center"
+            android:id="@+id/btn_renum_login_module"
+
+            android:layout_marginTop="20sp"/>
+
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+
+</LinearLayout>
